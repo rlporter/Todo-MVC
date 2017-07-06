@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-let todo = [];
+let todos = [];
 
 //GET /api/todos/ - return a JSON array of todo items
 app.get('/', function(req, res){
@@ -9,27 +9,27 @@ app.get('/', function(req, res){
 });
 
 //POST /api/todos/ - post a JSON representation of a todo and have it saved. Returns the saved todo item in JSON.
-app.post('/todo', function(req,res){
+app.post('/todos', function(req,res){
   res.json(todo);
 });
 
 //GET /api/todos[/id] - get a specific todo item.
-app.get('/todo/:id', function(req, res){
+app.get('/todos/:id', function(req, res){
   res.json(req.params.todo.id);
 });
 
 //PUT /api/todos[/id] - update a todo item. Returns the modified todo item.
-app.put('/todo/:id', function(req, res){
+app.put('/todos/:id', function(req, res){
   res.json(req.params.todo.id);
 });
 
 //PATCH /api/todos[/id] - partially update a todo item. Returns the modified todo item.
-app.patch('/todo/:id', function(req, res){
+app.patch('/todos/:id', function(req, res){
   res.json(req.params.todo.id);
 });
 
 //DELETE /api/todos[/id] - deletes a todo item. Returns the todo item that was deleted.
-app.delete('todo/:id', function(req, res){
+app.delete('todos/:id', function(req, res){
   res.json(req.params.todo.id);
 });
 
